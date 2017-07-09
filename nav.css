@@ -1,0 +1,96 @@
+/* ===================================================
+    FILE:   NAV.CSS
+    AUTHOR: Zaine Kingi
+    VER:    1.0
+    DESC:   Navigation*/
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  nav {
+    width: 75px;
+    height: 100%;
+    background: #1e1e1e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    transition: width .1 ease-in-out;
+    -webkit-transition: width .1 ease-in-out;
+    -moz-transition: width .1 ease-in-out;
+  }
+  .navbar-head {
+    background: #1e1e1e;
+    position: relative;
+    height: 100%;
+    width: 75px;
+  }
+  .nav-logo {
+    display: block;
+    height: 45px;
+    margin: 15px 20px;
+  }
+  .ham {
+    display: block;
+    position: absolute;
+    top: 45%;
+    left: 25%;
+    height: 25px;
+    cursor: pointer;
+    padding-top: 25px;
+    background: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+  }
+  .ham:hover {
+    background: #000;
+  }
+  .navbar-icon {
+    display: block;
+    width: 25px;
+    border-top: 3px solid yellow;
+    margin: 0;
+    border-radius: 5px;
+    transform: rotate(90deg);
+  }
+  .ham li:nth-child(2) {
+    margin-top: -3px;
+  }
+  .ham li:nth-child(1) {
+    margin-left: 10px;
+  }
+
+  /* navbar links */
+  .nav {
+    background: #1e1e1e;
+    width: 75px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1000;
+  }
+  .nav-items {
+    position: absolute;
+    bottom: 75px;
+    right: 10px;
+  }
+  .nav-items li a {
+    color: yellow;
+    font-family: 'Open Sans', arial, sans-serif;
+    text-decoration: none;
+    font-size: 1.2rem
+    font-weight: lighter;
+    line-height: 2.2rem;
+  }
+  .active {
+    color: #fff;
+    background: #000;
+  }
+}
