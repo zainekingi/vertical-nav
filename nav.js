@@ -4,27 +4,46 @@ var navIcons = document.getElementsByClassName('navbar-icon');
 var count = 75;
 var rot = 90;
 var isOpen;
+var vpWidth = window.innerWidth;
 
 ham.addEventListener('click', toggleNav);
 
 function toggleNav(){
   if(!isOpen) {
-    var openFn = setInterval(function(){
-      if(count !== 150) {
-        openNav();
-        //closeNavIcon();
+    var openFn = setInterval(function() {
+      if(vpWidth > 768) {
+        if(count !== 150) {
+          openNavDesk();
+          //closeNavIcon();
+        } else {
+          clearInterval(openFn);
+        }
       } else {
-        clearInterval(openFn);
+        if(count !== 200) {
+          openNavMob();
+          // closeNavicon();
+        } else {
+          clearInterval(openFn);
+        }
       }
     }, 1);
     isOpen = true;
   } else {
     var closeFn = setInterval(function() {
-      if(count > 75) {
-        closeNav();
-        //openNavIcon();
+      if(vpWidth > 768) {
+        if(count > 75) {
+          closeNavDesk();
+          //openNavIcon();
+        } else {
+          clearInterval(closeFn);
+        }
       } else {
-        clearInterval(closeFn);
+        if(count > 50) {
+          closeNavMob();
+          // openNavIcon();
+        } else {
+          clearInterval(closeFn);
+        }
       }
     }, 1);
     isOpen = false;
@@ -32,14 +51,24 @@ function toggleNav(){
 }
 
 
-function openNav() {
+function openNavDesk() {
   count ++;
   navLnks.style.width = count + 'px';
 }
 
-function closeNav() {
+function closeNavDesk() {
   count --;
   navLnks.style.width = count + 'px';
+}
+
+function openNavMob() {
+  count ++;
+  navLnks.style.height = count + 'px';
+}
+
+function closeNavMob() {
+  count --;
+  navLnks.style.height = count + 'px';
 }
 
 function closeNavIcon() {
